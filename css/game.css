@@ -1,0 +1,215 @@
+/* ゲームUIのようなレイアウトやデザインを設定 */
+/* 後でこの色を使いたいときに var(--primary-color) と書くだけでこの色を呼び出せる */
+:root {
+    --primary-color: #3498db; /*メインカラー*/
+    --secondary-color: #2980b9; /*ホバー時のボタンの色*/
+    --background-color: #ecf0f1; /*背景色（淡いグレー）*/
+    --card-back-color: #3498db; /*カードの裏面色（青）*/
+    --card-front-color: #fff; /*カードの表面色（白）*/
+}
+
+/**セレクタは、すべての要素に共通のスタイルを適用させるもの*/
+/*すべての要素の margin と padding をゼロに設定しています。これにより、ブラウザごとに異なるデフォルトの余白を統一し、見た目が崩れないように*/
+* {
+    margin: 0;  /*リセット、すべての要素の外側の余白をゼロに*/
+    padding: 0; /*リセット、すべての要素の内側の余白をゼロに*/
+    box-sizing: border-box; /*全体のボックスサイズがズレないように*/
+}
+
+/*ページ全体のスタイル*/
+body {
+    font-family: 'Arial', sans-serif; /*フォント*/
+    background-color: var(--background-color); /*背景色を変数で指定*/
+    min-height: 100vh; /*画面いっぱいの高さ*/
+    display: flex; /*フレックスボックスで子要素を中央に配置*/
+    justify-content: center; /*水平方向に中央揃え*/
+    align-items: center; /*垂直方向に中央揃え*/
+    padding: 20px; /* ページの内側にスペースを設定 */
+}
+
+/*ゲーム全体を囲む部分*/
+.game-container {
+    max-width: 800px; /*最大幅を設定し、幅が広がりすぎないようにする*/
+    width: 100%;  /* 幅を全体に広げる */
+    background-color: white; /*背景を白*/
+    padding: 20px; /* 内側のスペース */
+    border-radius: 10px; /*角を丸くする*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /*箱に影をつけて、少し浮かんでいるようなデザインに*/
+}
+
+/* タイトルのスタイル */
+.game-title {
+    font-size: 2em;  /* タイトルを大きく表示 */
+    text-align: center;  /* 中央揃え */
+    margin-bottom: 20px;  /* 下に余白を追加 */
+    color: var(--primary-color);  /* メインカラーを使用 */
+    font-weight: bold;
+}
+
+/*ゲームヘッダーとステータスエリア,タイマーや移動回数の表示*/
+.game-header {
+    display: flex; /* ヘッダーの要素を横並びに配置 */
+    justify-content: space-between; /* 要素間を均等に配置 */
+    align-items: center; /* 要素を中央揃え */
+    margin-bottom: 20px; /* 下部に余白を設定 */
+    flex-wrap: wrap; /* 幅が狭くなった場合、折り返す */
+    gap: 10px; /* 各要素の間隔を指定 */
+}
+
+.stats {
+    display: flex; /* ステータス内の要素を横並びに */
+    gap: 20px; /* 要素の間隔を指定 */
+}
+
+.timer,
+.moves {
+    font-size: 1.2em; /* フォントサイズを少し大きくする */
+    font-weight: bold; /* 太字にする */
+}
+
+/* コントロールボタン、セレクト */
+.controls {
+    display: flex; /* コントロール内の要素を横並びに */
+    gap: 10px; /* 要素の間隔を指定 */
+}
+
+select,
+button {
+    padding: 8px 16px; /* ボタンの内側のスペース */
+    border: none; /* 枠線を消す */
+    border-radius: 5px; /* 角を丸くする */
+    cursor: pointer; /* カーソルがボタンの形になる */
+    background-color: var(--primary-color); /* 変数で色を指定 */
+    color: white;  /* テキストの色を白にする */
+    font-size: 1em; /* フォントサイズを指定 */
+}
+
+select:hover,
+button:hover {
+    background-color: var(--secondary-color); /* ホバー時に色を変える */
+}
+
+.icon-button {
+    padding: 8px 12px;
+    font-size: 1.2em;
+}
+
+/* ゲームボードとカードのレイアウト */
+/* 難易度によって列数が変わるため、クラスを使って異なる列数を指定 */
+.game-board {
+    display: grid; /* グリッドレイアウトでカードを配置 */
+    gap: 10px; /* 各カードの間隔を指定 */
+    margin-bottom: 20px; /* 下部に余白を設定 */
+}
+
+.game-board.easy {
+    grid-template-columns: repeat(4, 1fr); /* 4列に並べる */
+}
+
+.game-board.medium {
+    grid-template-columns: repeat(4, 1fr); /* 4列に並べる */
+}
+
+.game-board.hard {
+    grid-template-columns: repeat(6, 1fr); /* 6列に並べる */
+}
+
+/* カードの裏面の色とサイズを設定 */
+.card {
+    aspect-ratio: 1;
+    background-color: var(--card-back-color);/* 裏面の色 */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;  /* 画像がカード枠からはみ出ないように */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* カードの画像 */
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* カードのサイズに合わせて画像を拡大・縮小 */
+    display: block;
+}
+
+/* 表示・非表示の切り替え */
+.hidden {
+    display: none;
+}
+
+.card.flipped {
+    background-color: var(--card-front-color); /* 表面の色 */
+    transform: rotateY(180deg); /* カードを回転させて裏返し */
+}
+
+/* スコアボード */
+.score-board {
+    text-align: center; /* テキストを中央揃え */
+    margin-top: 20px; /* 上部に余白 */
+    padding: 20px; /* 内側のスペース */
+    background-color: #f8f9fa; /* 背景色 */
+    border-radius: 5px; /* 角を丸く */
+}
+
+/* ゲームスコア、ハイスコア */
+.score-board h2,
+.score-board h3 {
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;/* ゲームスコア、ハイスコアをゲーム終了時まで一時的に非表示にしたい要素に適用 */
+}
+
+.start-message {  /* ゲーム開始時のメッセージなどを見やすく */
+    text-align: center; /* テキストを中央揃えにする */
+    margin-top: 20px; /* 上部に余白を追加 */
+    font-size: 1.1em; /* フォントサイズを少し大きくする */
+    color: #666; /* 薄いグレーで控えめな色を指定 */
+}
+
+/* メディアクエリ スマホとタブレット用*/
+@media (min-width: 600px) and (max-width: 768px) {
+
+    /* スタイル */
+    .game-container {
+        padding: 10px;
+        /* 余白を設定 */
+    }
+
+    .game-header {
+        flex-direction: row;
+        /* ヘッダーを横並びに */
+        gap: 5px;
+        /* 要素間の余白を少し広げる */
+    }
+
+    .game-board {
+        gap: 5px;
+        /* カード間の隙間を少し広く */
+    }
+
+    .card {
+        font-size: 1.3em;
+        /* フォントサイズを画面に合わせて調整 */
+    }
+
+    .score-board {
+        padding: 10px;
+        /* スコアボードに余白を増やす */
+        font-size: 1.2em;
+        /* 読みやすいサイズに調整 */
+    }
+}
+
+/* 600px以下：スマートフォン（縦向き）向け
+768px以下：小型タブレットやスマートフォン（横向き）
+1024px以下：タブレット向け
+1200px以上：デスクトップ向け */

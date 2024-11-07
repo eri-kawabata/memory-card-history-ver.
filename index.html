@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双璧の武/戦国武将神経衰弱</title>
+    <link rel="stylesheet" href="./css/game.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- ゲームタイトル -->
+        <h1 class="game-title">双璧の武</h1>
+        <!-- ゲームのUI要素 -->
+        <div class="game-header">
+            <div class="stats">
+                <div class="timer">
+                    <span class="timer-icon">⏱</span>
+                    <span id="time-remaining">60</span>秒
+                </div>
+                <div class="moves">
+                    <span class="moves-icon">👆</span>
+                    <span id="moves-count">0</span>手
+                </div>
+            </div>
+            <div class="controls">
+                <select id="difficulty">
+                    <option value="easy">かんたん</option>
+                    <option value="medium">ふつう</option>
+                    <option value="hard">むずかしい</option>
+                </select>
+                <button id="sound-toggle" class="icon-button">🔊</button>
+                <button id="reset-button">リセット</button>
+            </div>
+        </div>
+
+        <!-- ゲームボードとスコアボード -->
+        <div id="game-board" class="game-board"></div>
+        <div id="score-board" class="score-board hidden">
+            <h2>ゲーム終了！</h2>
+            <div id="final-score"></div>
+            <h3>ハイスコア</h3>
+            <div id="high-scores"></div>
+        </div>
+        <div id="start-message" class="start-message">
+            難易度を選んで「リセット」を押してゲームを開始してください
+        </div>
+
+        <!-- 音声ファイルを指定 -->
+        <audio id="flip-sound" src="./sound/flip.mp3" preload="auto"></audio>
+        <audio id="match-sound" src="./sound/match.mp3" preload="auto"></audio>
+        <audio id="victory-sound" src="./sound/victory-sound.mp3" preload="auto"></audio>
+        <audio id="gameover-sound" src="./sound/gameover-sound.mp3" preload="auto"></audio>
+
+    </div>
+    <script src="./js/game.js"></script>
+</body>
+
+</html>
