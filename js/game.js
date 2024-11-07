@@ -1,99 +1,99 @@
 const HISTORICAL_EVENTS = [
     // 各人物とその関連イベントを持つデータ構造
     {
-        person: { name: 'image1', image: '../image/image1.jpg' },
+        person: { name: 'image1', image: './image/image1.jpg' },
         events: [
-            { title: 'image2', image: '../image/image2.jpg' },
-            { title: 'image3', image: '../image/image3.jpg' },
-            { title: 'image4', image: '../image/image4.jpg' }
+            { title: 'image2', image: './image/image2.jpg' },
+            { title: 'image3', image: './image/image3.jpg' },
+            { title: 'image4', image: './image/image4.jpg' }
         ]
     },
     {
-        person: { name: 'image5', image: '../image/image5.jpg' },
+        person: { name: 'image5', image: './image/image5.jpg' },
         events: [
-            { title: 'image6', image: '../image/image6.jpg' },
-            { title: 'image7', image: '../image/image7.jpg' },
-            { title: 'image8', image: '../image/image8.jpg' }
+            { title: 'image6', image: './image/image6.jpg' },
+            { title: 'image7', image: './image/image7.jpg' },
+            { title: 'image8', image: './image/image8.jpg' }
         ]
     },
     {
-        person: { name: 'image9', image: '../image/image9.jpg' },
+        person: { name: 'image9', image: './image/image9.jpg' },
         events: [
-            { title: 'image10', image: '../image/image10.jpg' },
-            { title: 'image11', image: '../image/image11.jpg' },
-            { title: 'image12', image: '../image/image12.jpg' }
+            { title: 'image10', image: './image/image10.jpg' },
+            { title: 'image11', image: './image/image11.jpg' },
+            { title: 'image12', image: './image/image12.jpg' }
         ]
     },
     {
-        person: { name: 'image13', image: '../image/image13.jpg' },
+        person: { name: 'image13', image: './image/image13.jpg' },
         events: [
-            { title: 'image14', image: '../image/image14.jpg' },
-            { title: 'image15', image: '../image/image15.jpg' },
-            { title: 'image16', image: '../image/image16.jpg' }
+            { title: 'image14', image: './image/image14.jpg' },
+            { title: 'image15', image: './image/image15.jpg' },
+            { title: 'image16', image: './image/image16.jpg' }
         ]
     },
     {
-        person: { name: 'image17', image: '../image/image17.jpg' },
+        person: { name: 'image17', image: './image/image17.jpg' },
         events: [
-            { title: 'image18', image: '../image/image18.jpg' },
-            { title: 'image19', image: '../image/image19.jpg' },
-            { title: 'image20', image: '../image/image20.jpg' }
+            { title: 'image18', image: './image/image18.jpg' },
+            { title: 'image19', image: './image/image19.jpg' },
+            { title: 'image20', image: './image/image20.jpg' }
         ]
     },
     {
-        person: { name: 'image21', image: '../image/image21.jpg' },
+        person: { name: 'image21', image: './image/image21.jpg' },
         events: [
-            { title: 'image22', image: '../image/image22.jpg' },
-            { title: 'image23', image: '../image/image23.jpg' },
-            { title: 'image24', image: '../image/image24.jpg' }
+            { title: 'image22', image: './image/image22.jpg' },
+            { title: 'image23', image: './image/image23.jpg' },
+            { title: 'image24', image: './image/image24.jpg' }
         ]
     },
     {
-        person: { name: 'image25', image: '../image/image25.jpg' },
+        person: { name: 'image25', image: './image/image25.jpg' },
         events: [
-            { title: 'image26', image: '../image/image26.jpg' },
-            { title: 'image27', image: '../image/image27.jpg' },
-            { title: 'image28', image: '../image/image28.jpg' }
+            { title: 'image26', image: './image/image26.jpg' },
+            { title: 'image27', image: './image/image27.jpg' },
+            { title: 'image28', image: './image/image28.jpg' }
         ]
     },
     {
-        person: { name: 'image29', image: '../image/image29.jpg' },
+        person: { name: 'image29', image: './image/image29.jpg' },
         events: [
-            { title: 'image30', image: '../image/image30.jpg' },
-            { title: 'image31', image: '../image/image31.jpg' },
-            { title: 'image32', image: '../image/image32.jpg' }
+            { title: 'image30', image: './image/image30.jpg' },
+            { title: 'image31', image: './image/image31.jpg' },
+            { title: 'image32', image: './image/image32.jpg' }
         ]
     },
     {
-        person: { name: 'image33', image: '../image/image33.jpg' },
+        person: { name: 'image33', image: './image/image33.jpg' },
         events: [
-            { title: 'image34', image: '../image/image34.jpg' },
-            { title: 'image35', image: '../image/image35.jpg' },
-            { title: 'image36', image: '../image/image36.jpg' }
+            { title: 'image34', image: './image/image34.jpg' },
+            { title: 'image35', image: './image/image35.jpg' },
+            { title: 'image36', image: './image/image36.jpg' }
         ]
     },
     {
-        person: { name: 'image37', image: '../image/image37.jpg' },
+        person: { name: 'image37', image: './image/image37.jpg' },
         events: [
-            { title: 'image38', image: '../image/image38.jpg' },
-            { title: 'image39', image: '../image/image39.jpg' },
-            { title: 'image40', image: '../image/image40.jpg' }
+            { title: 'image38', image: './image/image38.jpg' },
+            { title: 'image39', image: './image/image39.jpg' },
+            { title: 'image40', image: './image/image40.jpg' }
         ]
     },
     {
-        person: { name: 'image41', image: '../image/image41.jpg' },
+        person: { name: 'image41', image: './image/image41.jpg' },
         events: [
-            { title: 'image42', image: '../image/image42.jpg' },
-            { title: 'image43', image: '../image/image43.jpg' },
-            { title: 'image44', image: '../image/image44.jpg' }
+            { title: 'image42', image: './image/image42.jpg' },
+            { title: 'image43', image: './image/image43.jpg' },
+            { title: 'image44', image: './image/image44.jpg' }
         ]
     },
     {
-        person: { name: 'image45', image: '../image/image45.jpg' },
+        person: { name: 'image45', image: './image/image45.jpg' },
         events: [
-            { title: 'image46', image: '../image/image46.jpg' },
-            { title: 'image47', image: '../image/image47.jpg' },
-            { title: 'image48', image: '../image/image48.jpg' }
+            { title: 'image46', image: './image/image46.jpg' },
+            { title: 'image47', image: './image/image47.jpg' },
+            { title: 'image48', image: './image/image48.jpg' }
         ]
     }
     // 他の人物と出来事を追加できる
